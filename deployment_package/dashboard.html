@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLOv8 Model Performance Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #4CAF50;
+            margin: 0;
+        }
+        .header p {
+            color: #aaa;
+            font-size: 1.1em;
+        }
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+        .kpi-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .kpi-card h3 {
+            margin: 0 0 10px;
+            color: #888;
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+        .kpi-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .chart-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+        .chart-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .chart-card h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #ccc;
+        }
+        .chart-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .full-width-container {
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>YOLOv8 Model Performance Dashboard</h1>
+        <p>Evaluation results from the test dataset.</p>
+    </div>
+
+    <div class="kpi-container">
+        <div class="kpi-card">
+            <h3>mAP@50-95</h3>
+            <div class="value">0.594</div>
+        </div>
+        <div class="kpi-card">
+            <h3>mAP@50</h3>
+            <div class="value">0.691</div>
+        </div>
+        <div class="kpi-card">
+            <h3>mAP@75</h3>
+            <div class="value">0.632</div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-card">
+            <h2>Confusion Matrix (Raw Counts)</h2>
+            <img src="confusion_matrix_raw.png" alt="Raw Confusion Matrix">
+        </div>
+        <div class="chart-card">
+            <h2>Confusion Matrix (Normalized)</h2>
+            <img src="confusion_matrix_normalized.png" alt="Normalized Confusion Matrix">
+        </div>
+        <div class="chart-card full-width-container">
+            <h2>Per-Class F1-Score</h2>
+            <img src="f1_score_chart.png" alt="Per-Class F1-Score">
+        </div>
+        <div class="chart-card">
+            <h2>Per-Class Precision</h2>
+            <img src="precision_chart.png" alt="Per-Class Precision">
+        </div>
+        <div class="chart-card">
+            <h2>Per-Class Recall</h2>
+            <img src="recall_chart.png" alt="Per-Class Recall">
+        </div>
+    </div>
+
+</body>
+</html>

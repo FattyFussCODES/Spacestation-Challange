@@ -1,0 +1,14 @@
+train:
+- C:/Users/bohra/OneDrive/Desktop/Satellite Detection using Yolo/hackathon2_train_3/train_3/train3
+- C:\Users\bohra\OneDrive\Desktop\Satellite Detection using Yolo\hackathon2_train_3\train_3\train3_target_aug
+val: C:/Users/bohra/OneDrive/Desktop/Satellite Detection using Yolo/hackathon2_train_3/train_3/val3
+test: C:/Users/bohra/OneDrive/Desktop/Satellite Detection using Yolo/hackathon2_test3/test3
+nc: 7
+names:
+- OxygenTank
+- NitrogenTank
+- FirstAidBox
+- FireAlarm
+- SafetySwitchPanel
+- EmergencyPhone
+- FireExtinguisher
